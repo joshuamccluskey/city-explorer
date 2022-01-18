@@ -25,7 +25,7 @@ Application is your own virtual guide to any city in the world.
 
 ### [Trello](https://trello.com/b/V7StKRPp/city-explorer)
 
-### [PR](https://github.com/joshuamccluskey/city-explorer/pull/1/commits)
+### [PR Lab06](https://github.com/joshuamccluskey/city-explorer/pull/1/commits)
 
 ## Change Log
 
