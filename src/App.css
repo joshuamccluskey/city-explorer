@@ -1,38 +1,36 @@
-.App {
+* {
+  background-color: azure;
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+h1 {
+  font-size: 800%;
+  text-align: center;
+  font-family: 'Londrina Outline', cursive;
+}
+h2 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3{
+  text-align: center;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+input[type=text]:focus {
+  background-color: lightblue;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.card{
+  margin-top: 2.5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

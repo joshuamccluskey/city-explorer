@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# City Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Author**: Joshua McCluskey
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Application is your own virtual guide to any city in the world.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### [City Explorer Website](https://city-explorer-joshuamccluskey.netlify.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Architecture
 
-### `npm test`
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Bootstrap
+- LocationIQ API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### [Trello](https://trello.com/b/V7StKRPp/city-explorer)
 
-### `npm run build`
+### [PR](https://github.com/joshuamccluskey/city-explorer/pull/1/commits)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Change Log
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+01.17.2021 6:00 PM PST - Repo created deployment bug fixed in package.json file
+01.17.2021 11:00 PM PST - Setup LocationIQ API, states, and functions
+01.17.2021 11:15 PM PST - Map Rendered in Bootstrap Card
+01.18.2021 01:00 AM PST - CSS Styling and Error Message Complete
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Credit and Collaborations
 
-### `npm run eject`
+- Credit: Kevin Lamarca on collaboration on WRRC Design
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Name of feature: 1 Setup Repo and API
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Estimate of time needed to complete: 30 minutes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start time: 5:00 PM PST
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Finish time: 6:00 PM PST
 
-## Learn More
+Actual time needed to complete: 1 hour
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Name of feature: 2 Locations
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Estimate of time needed to complete: 1 Hour
 
-### Code Splitting
+Start time: 9:00 PM PST
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Finish time: 11:00 PM PST
 
-### Analyzing the Bundle Size
+Actual time needed to complete: 2 hours
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Name of feature: 3 Map
 
-### Making a Progressive Web App
+Estimate of time needed to complete: 30 minutes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start time: 11:00 PM PST
 
-### Advanced Configuration
+Finish time: 11:15 PM PST
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Actual time needed to complete: 15 minutes
 
-### Deployment
+Estimate of time needed to complete: 30 minutes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Name of feature: Styling and 4 Error Message
 
-### `npm run build` fails to minify
+Estimate of time needed to complete: 1 hour
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Start time: 11:15 PM PST
+
+Finish time: 1:00 AM PST
+
+Actual time needed to complete: 1.75 hours
