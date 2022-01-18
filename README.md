@@ -13,6 +13,8 @@ Application is your own virtual guide to any city in the world.
 
 ## Architecture
 
+![Diagram](./public/img/Lab%2006%20Web%20Request%20Response%20Cycle%201.png)
+
 - HTML5
 - CSS3
 - JavaScript
