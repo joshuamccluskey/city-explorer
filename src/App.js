@@ -40,7 +40,7 @@ class App extends React.Component {
     } catch (error) {
       this.setState({
         renderError: true,
-        errorMessage: `It's Broke!`
+        errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error};}`
       })
     }
   }
@@ -59,6 +59,7 @@ class App extends React.Component {
             </label>
             <button type="submit">Explore!</button>
           </form>
+          <h2>{this.state.errorMessage}</h2>
           <Card>
             <Card.Body>
               <Card.Title>City: {this.state.cityData.display_name}</Card.Title>
