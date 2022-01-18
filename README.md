@@ -20,6 +20,7 @@ Application is your own virtual guide to any city in the world.
 - JavaScript
 - React
 - Bootstrap
+- Axios
 - LocationIQ API
 
 ### [Trello](https://trello.com/b/V7StKRPp/city-explorer)
