@@ -22,6 +22,7 @@ Application is your own virtual guide to any city in the world.
 - Bootstrap
 - Axios
 - LocationIQ API
+- Netlify
 
 ### [Trello](https://trello.com/b/V7StKRPp/city-explorer)
 
