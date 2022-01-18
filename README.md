@@ -29,10 +29,10 @@ Application is your own virtual guide to any city in the world.
 
 ## Change Log
 
-01.17.2021 6:00 PM PST - Repo created deployment bug fixed in package.json file
-01.17.2021 11:00 PM PST - Setup LocationIQ API, states, and functions
-01.17.2021 11:15 PM PST - Map Rendered in Bootstrap Card
-01.18.2021 01:00 AM PST - CSS Styling and Error Message Complete
+- 01.17.2021 6:00 PM PST - Repo created deployment bug fixed in package.json file
+- 01.17.2021 11:00 PM PST - Setup LocationIQ API, states, and functions
+- 01.17.2021 11:15 PM PST - Map Rendered in Bootstrap Card
+- 01.18.2021 01:00 AM PST - CSS Styling and Error Message Complete
 
 ## Credit and Collaborations
 
