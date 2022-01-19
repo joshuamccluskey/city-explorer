@@ -13,7 +13,8 @@ Application is your own virtual guide to any city in the world.
 
 ## Architecture
 
-![Diagram](./public/img/Lab%2006%20Web%20Request%20Response%20Cycle%201.png)
+![API Diagram](./public/img/Lab%2006%20Web%20Request%20Response%20Cycle%201.png)
+![Server Diagram](./public/img/wwrc-lab2.png)
 
 - HTML5
 - CSS3
@@ -80,3 +81,13 @@ Start time: 11:15 PM PST
 Finish time: 1:00 AM PST
 
 Actual time needed to complete: 1.75 hours
+
+### Name of feature: Card 2 Weather Placeholder
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 8:00 PM PST
+
+Finish time: 10:00 PM PST
+
+Actual time needed to complete: 2 Hours

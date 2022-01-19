@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 
+
 import '../src/App.css'
 
 
@@ -17,14 +18,20 @@ class App extends React.Component {
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
     let city = e.target.city.value;
+
+    let url = `http://localhost:3002/weather?city_name=${city}`
+    let cityResults = await axios.get(url)
+    console.log(cityResults.data);
     this.setState({
       searchCity: e.target.city.value,
     });
     this.getCity(city);
   }
+
+
 
   getCity = async (city) => {
     try {
@@ -47,6 +54,7 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.state);
     return (
       <>
 
