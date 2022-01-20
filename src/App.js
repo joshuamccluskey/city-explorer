@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 import '../src/App.css'
 
@@ -14,17 +16,23 @@ class App extends React.Component {
       errorMessage: '',
       searchCity: '',
       cityData: {},
+      showMap: false,
+      weatherData: [],
+      showWeather: false
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
     let city = e.target.city.value;
+
     this.setState({
       searchCity: e.target.city.value,
     });
     this.getCity(city);
   }
+
+
 
   getCity = async (city) => {
     try {
@@ -35,7 +43,10 @@ class App extends React.Component {
 
       console.log(citySearch.data[0]);
       this.setState({
-        cityData: citySearch.data[0]
+        cityData: citySearch.data[0],
+        showMap: true,
+        errorMessage: ''
+
       })
     } catch (error) {
       this.setState({
@@ -43,35 +54,69 @@ class App extends React.Component {
         errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error};}`
       })
     }
+    this.getWeather();
   }
+  getWeather = async () => {
 
+    try {
+      let url = `http://localhost:3002/weather?city_name=${this.state.searchCity}`
+      let cityResults = await axios.get(url)
+      console.log(cityResults.data);
 
+      this.setState({
+        weatherData: cityResults.data,
+        showWeather: true,
+        errorMessage: ''
+      })
+    } catch (error) {
+      this.setState({
+        renderError: true,
+        errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error};}`
+      })
+    }
+
+  }
   render() {
+    console.log(this.state.weatherData);
+    let weatherRender = this.state.weatherData.map((day, idx) => (
+      <ListGroup.Item key={idx}>Date: {day.datetime}, {day.description}</ListGroup.Item>
+    ))
     return (
       <>
 
-      <h1>City Explorer</h1>
+        <h1>City Explorer</h1>
 
         <main>
           <form onSubmit={this.handleSubmit}>
             <label>Explore a City!
-              <input name="city" type="text" placeholder='🔎 Ex. Seattle'/>
+              <input name="city" type="text" placeholder='🔎 Ex. Seattle' />
             </label>
             <button type="submit">Explore!</button>
           </form>
           <h2>{this.state.errorMessage}</h2>
-          <Card>
-            <Card.Body>
-              <Card.Title>City: {this.state.cityData.display_name}</Card.Title>
-              <Card.Text>Latitude : {this.state.cityData.lat}</Card.Text>
-              <Card.Text>Longitude : {this.state.cityData.lon}</Card.Text>
-              <Card.Img
-                src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`}
-                alt={this.state.cityData.display_name}
-                title={this.state.cityData.display_name} />
-            </Card.Body>
+          {
+            this.state.showMap &&
+            <Card>
+              <Card.Body>
+                <Card.Title>City: {this.state.cityData.display_name}</Card.Title>
+                <Card.Text>Latitude : {this.state.cityData.lat}</Card.Text>
+                <Card.Text>Longitude : {this.state.cityData.lon}</Card.Text>
+                <Card.Img
+                  src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`}
+                  alt={this.state.cityData.display_name}
+                  title={this.state.cityData.display_name} />
+              </Card.Body>
 
-          </Card>
+            </Card>
+          }
+
+          {
+            this.state.showWeather && 
+            <ListGroup>
+              {weatherRender}
+
+            </ListGroup>
+          }
         </main>
 
         <h3>&copy; 2022 Joshua McCluskey</h3>
