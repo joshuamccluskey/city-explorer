@@ -42,6 +42,9 @@ Application is your own virtual guide to any city in the world.
 
 - Credit: Kevin Lamarca on collaboration on WRRC Design
 - Credit: Regan Hayes on Collaboration on WRRC
+- Credit: Chuck Altopiedi on Collaboration on WRRC
+  
+## Lab 07
 
 ### Name of feature: 1 Setup Repo and API
 
@@ -104,3 +107,5 @@ Start time: 4:15 PM PST
 Finish time: 5:30 PM PST
 
 Actual time needed to complete: 1.25 hours
+
+## Lab 08
