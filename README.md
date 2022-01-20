@@ -13,8 +13,9 @@ Application is your own virtual guide to any city in the world.
 
 ## Architecture
 
-![API Diagram](./public/img/Lab%2006%20Web%20Request%20Response%20Cycle%201.png)
+![Diagram](./public/img/Lab%2006%20Web%20Request%20Response%20Cycle%201.png)
 ![Server Diagram](./public/img/wwrc-lab2.png)
+![API Diagram](./public/img/WRRC%20API%20Diagram%20CJ.png)
 
 - HTML5
 - CSS3
@@ -35,10 +36,12 @@ Application is your own virtual guide to any city in the world.
 - 01.17.2021 11:00 PM PST - Setup LocationIQ API, states, and functions
 - 01.17.2021 11:15 PM PST - Map Rendered in Bootstrap Card
 - 01.18.2021 01:00 AM PST - CSS Styling and Error Message Complete
+- 01.19.2021 05:24 PM PST - Debugged and Finich Card 2 and 3
 
 ## Credit and Collaborations
 
 - Credit: Kevin Lamarca on collaboration on WRRC Design
+- Credit: Regan Hayes on Collaboration on WRRC
 
 ### Name of feature: 1 Setup Repo and API
 
@@ -91,3 +94,13 @@ Start time: 8:00 PM PST
 Finish time: 10:00 PM PST
 
 Actual time needed to complete: 2 Hours
+
+### Name of feature: Card 2 Weather Placeholder Card 3 Error Handeling
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 4:15 PM PST
+
+Finish time: 5:30 PM PST
+
+Actual time needed to complete: 1.25 hours
