@@ -16,6 +16,7 @@ Application is your own virtual guide to any city in the world.
 ![Diagram](./public/img/Lab%2006%20Web%20Request%20Response%20Cycle%201.png)
 ![Server Diagram](./public/img/wwrc-lab2.png)
 ![API Diagram](./public/img/WRRC%20API%20Diagram%20CJ.png)
+![Require Diagram](./img/WRRC%20Require.png)
 
 - HTML5
 - CSS3
