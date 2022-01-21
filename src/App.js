@@ -16,15 +16,11 @@ class App extends React.Component {
       cityData: {},
       showMap: false,
       weatherData: [],
-      showWeather: false,
-      imgUrl: '',
-      cityName: '',
-      latitude: '',
-      longitude: '',
+      showWeather: false
     }
   }
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
     let city = e.target.city.value;
 
@@ -34,14 +30,18 @@ class App extends React.Component {
     this.getCity(city);
   }
 
-  handelChange = click => {
+  handleInput = (e) => {
+    e.preventDefault();
+    
     this.setState({
-      searchCity: click.target.value
+      searchCity: e.target.value
     })
+  console.log(this.state.searchCity);
   }
 
 
-  getCity = async (e) => {
+
+  getCity = async () => {
     try {
       let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&q=${this.state.searchCity}&format=json`
 
@@ -98,7 +98,7 @@ class App extends React.Component {
               name="city" 
               type="text"
               placeholder='🔎 Ex. Seattle' 
-              onChange={this.handleChange}/>
+              onInput={this.handleInput}/>
             </label>
             <button type="submit">Explore!</button>
           </form>
@@ -125,9 +125,10 @@ class App extends React.Component {
           <Weather
             cityData={this.state.cityData}
             showMap={this.state.showMap}
+            getWeather={this.getWeather}
             showWeather={this.state.showWeather}
             weatherData={this.state.weatherData}
-            imgUrl={this.state.imgUrl}
+
           />
 
 
