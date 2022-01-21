@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-
+import Weather from './Weather.js';
 
 import '../src/App.css'
 
@@ -18,7 +16,8 @@ class App extends React.Component {
       cityData: {},
       showMap: false,
       weatherData: [],
-      showWeather: false
+      showWeather: false,
+      imgUrl: '',
     }
   }
 
@@ -45,10 +44,15 @@ class App extends React.Component {
       this.setState({
         cityData: citySearch.data[0],
         showMap: true,
+        imgUrl: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`,
         errorMessage: ''
 
       })
     } catch (error) {
+      let url = `http://localhost:3002/throw-an-error`
+      let errorMessage = await axios.get(url);
+      console.log(errorMessage);
+
       this.setState({
         renderError: true,
         errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error};}`
@@ -69,6 +73,10 @@ class App extends React.Component {
         errorMessage: ''
       })
     } catch (error) {
+      let url = `http://localhost:3002/throw-an-error`
+      let errorMessage = await axios.get(url);
+      console.log(errorMessage);
+
       this.setState({
         renderError: true,
         errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error};}`
@@ -78,9 +86,7 @@ class App extends React.Component {
   }
   render() {
     console.log(this.state.weatherData);
-    let weatherRender = this.state.weatherData.map((day, idx) => (
-      <ListGroup.Item key={idx}>Date: {day.datetime}, {day.description}</ListGroup.Item>
-    ))
+
     return (
       <>
 
@@ -94,29 +100,15 @@ class App extends React.Component {
             <button type="submit">Explore!</button>
           </form>
           <h2>{this.state.errorMessage}</h2>
-          {
-            this.state.showMap &&
-            <Card>
-              <Card.Body>
-                <Card.Title>City: {this.state.cityData.display_name}</Card.Title>
-                <Card.Text>Latitude : {this.state.cityData.lat}</Card.Text>
-                <Card.Text>Longitude : {this.state.cityData.lon}</Card.Text>
-                <Card.Img
-                  src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`}
-                  alt={this.state.cityData.display_name}
-                  title={this.state.cityData.display_name} />
-              </Card.Body>
+        <Weather
+        cityData={this.state.cityData}
+        showMap={this.state.showMap}
+        showWeather={this.state.showWeather}
+        weatherData={this.state.weatherData}
+        imgUrl={this.state.imgUrl}
+        />
 
-            </Card>
-          }
-
-          {
-            this.state.showWeather && 
-            <ListGroup>
-              {weatherRender}
-
-            </ListGroup>
-          }
+   
         </main>
 
         <h3>&copy; 2022 Joshua McCluskey</h3>
@@ -128,8 +120,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-
-
-
-
