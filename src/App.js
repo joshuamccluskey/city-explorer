@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Weather from './Weather.js';
-
+import Card from 'react-bootstrap/Card';
 import '../src/App.css'
 
 
@@ -18,6 +18,9 @@ class App extends React.Component {
       weatherData: [],
       showWeather: false,
       imgUrl: '',
+      cityName: '',
+      latitude: '',
+      longitude: '',
     }
   }
 
@@ -31,11 +34,16 @@ class App extends React.Component {
     this.getCity(city);
   }
 
+  handelChange = click => {
+    this.setState({
+      searchCity: click.target.value
+    })
+  }
 
 
-  getCity = async (city) => {
+  getCity = async (e) => {
     try {
-      let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&q=${city}&format=json`
+      let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&q=${this.state.searchCity}&format=json`
 
       console.log(url);
       let citySearch = await axios.get(url);
@@ -44,18 +52,13 @@ class App extends React.Component {
       this.setState({
         cityData: citySearch.data[0],
         showMap: true,
-        imgUrl: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`,
         errorMessage: ''
 
       })
     } catch (error) {
-      let url = `http://localhost:3002/throw-an-error`
-      let errorMessage = await axios.get(url);
-      console.log(errorMessage);
-
       this.setState({
         renderError: true,
-        errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error};}`
+        errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error}`
       })
     }
     this.getWeather();
@@ -73,13 +76,9 @@ class App extends React.Component {
         errorMessage: ''
       })
     } catch (error) {
-      let url = `http://localhost:3002/throw-an-error`
-      let errorMessage = await axios.get(url);
-      console.log(errorMessage);
-
       this.setState({
         renderError: true,
-        errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error};}`
+        errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error}`
       })
     }
 
@@ -95,20 +94,43 @@ class App extends React.Component {
         <main>
           <form onSubmit={this.handleSubmit}>
             <label>Explore a City!
-              <input name="city" type="text" placeholder='🔎 Ex. Seattle' />
+              <input 
+              name="city" 
+              type="text"
+              placeholder='🔎 Ex. Seattle' 
+              onChange={this.handleChange}/>
             </label>
             <button type="submit">Explore!</button>
           </form>
-          <h2>{this.state.errorMessage}</h2>
-        <Weather
-        cityData={this.state.cityData}
-        showMap={this.state.showMap}
-        showWeather={this.state.showWeather}
-        weatherData={this.state.weatherData}
-        imgUrl={this.state.imgUrl}
-        />
 
-   
+
+          <h2>{this.state.errorMessage}</h2>
+          {
+            this.state.showMap &&
+            <Card>
+              <Card.Body>
+                <Card.Title>City: {this.state.cityData.display_name}</Card.Title>
+                <Card.Text>Latitude : {this.state.cityData.lat}</Card.Text>
+                <Card.Text>Longitude : {this.state.cityData.lon}</Card.Text>
+                <Card.Img
+                  src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=10`}
+                  alt={this.state.cityData.display_name}
+                  title={this.state.cityData.display_name} />
+              </Card.Body>
+
+            </Card>
+          }
+
+
+          <Weather
+            cityData={this.state.cityData}
+            showMap={this.state.showMap}
+            showWeather={this.state.showWeather}
+            weatherData={this.state.weatherData}
+            imgUrl={this.state.imgUrl}
+          />
+
+
         </main>
 
         <h3>&copy; 2022 Joshua McCluskey</h3>
