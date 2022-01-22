@@ -17,6 +17,7 @@ Application is your own virtual guide to any city in the world.
 ![Server Diagram](./public/img/wwrc-lab2.png)
 ![API Diagram](./public/img/WRRC%20API%20Diagram%20CJ.png)
 ![Require Diagram](./img/WRRC%20Require.png)
+![Cache Diagram](./public/img/lab10%20wrrc.png)
 
 - HTML5
 - CSS3
@@ -37,12 +38,17 @@ Application is your own virtual guide to any city in the world.
 - 01.17.2021 11:00 PM PST - Setup LocationIQ API, states, and functions
 - 01.17.2021 11:15 PM PST - Map Rendered in Bootstrap Card
 - 01.18.2021 01:00 AM PST - CSS Styling and Error Message Complete
-- 01.19.2021 05:24 PM PST - Debugged and Finich Card 2 and 3
+- 01.19.2021 05:24 PM PST - Debugged and Finish Card 2 and 3
+- 01.20.2021 05:30 PM PST - Updates for lab 07
+- 01.21.2021 02:30 PM PST - Lab08 Complete Deployment on Heroku
 
 ## Credit and Collaborations
 
 - Credit: Kevin Lamarca on collaboration on WRRC Design
-- Credit: Regan Hayes on Collaboration on WRRC
+- Credit: Regan Hayes on Collaboration on WRRC Server Diagram
+- Credit: Chuck Altopiedi on Collaboration on WRRC API Diagram
+- Credit: Brian Thornburg on Collaboration on WRRC Require Diagram
+- Credit: Robb Alexander and Brian Thornburg on WRRC Cache Diagram
 
 ### Name of feature: 1 Setup Repo and API
 
@@ -105,3 +111,33 @@ Start time: 4:15 PM PST
 Finish time: 5:30 PM PST
 
 Actual time needed to complete: 1.25 hours
+
+### Lab 07 Updates
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 4:15 PM PST
+
+Finish time: 5:30 PM PST
+
+Actual time needed to complete: 1.25 hours
+
+### Lab08 API Card 1
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:30 PM PST
+
+Finish time: 12:30 PM PST
+
+Actual time needed to complete: 3 hours
+
+### Lab08 Complete
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:30 PM PST
+
+Finish time: 12:30 PM PST
+
+Actual time needed to complete: 3 hours

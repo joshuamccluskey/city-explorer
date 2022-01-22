@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Weather from './Weather.js';
+import Movies from './Movies.js';
 import Card from 'react-bootstrap/Card';
 import '../src/App.css'
 
@@ -14,43 +15,47 @@ class App extends React.Component {
       errorMessage: '',
       searchCity: '',
       cityData: {},
+      lat: '',
+      lon: '',
       showMap: false,
       weatherData: [],
-      showWeather: false
+      moviesData: [],
+      showWeather: false,
+      showMovies: false
     }
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    let city = e.target.city.value;
 
     this.setState({
       searchCity: e.target.city.value,
     });
-    this.getCity(city);
+    this.getCity();
+    this.getMovies();
   }
 
   handleInput = (e) => {
     e.preventDefault();
-    
+
     this.setState({
       searchCity: e.target.value
     })
-  console.log(this.state.searchCity);
+
   }
 
 
 
   getCity = async () => {
     try {
-      let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&q=${this.state.searchCity}&format=json`
+      let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_ACCESS_TOKEN}&q=${this.state.searchCity}&format=json`;
 
-      console.log(url);
       let citySearch = await axios.get(url);
 
-      console.log(citySearch.data[0]);
       this.setState({
         cityData: citySearch.data[0],
+        lat: citySearch.data[0].lat,
+        lon: citySearch.data[0].lon,
         showMap: true,
         errorMessage: ''
 
@@ -66,12 +71,12 @@ class App extends React.Component {
   getWeather = async () => {
 
     try {
-      let url = `http://localhost:3002/weather?city_name=${this.state.searchCity}`
-      let cityResults = await axios.get(url)
-      console.log(cityResults.data);
+      let url = `http://localhost:3002/weather?lat=${this.state.lat}&lon=${this.state.lon}`
+      let weatherResults = await axios.get(url);
+      console.log(weatherResults.data);
 
       this.setState({
-        weatherData: cityResults.data,
+        weatherData: weatherResults.data,
         showWeather: true,
         errorMessage: ''
       })
@@ -83,8 +88,30 @@ class App extends React.Component {
     }
 
   }
+  getMovies = async () => {
+    // try {
+    let url = `http://localhost:3002/movies?searchCity=${this.state.searchCity}`;
+    console.log(url);
+    let movieResults = await axios.get(url);
+    console.log(movieResults.data);
+
+    this.setState({
+      moviesData: movieResults.data,
+      showMovies: true,
+      errorMessage: ''
+    })
+
+
+    // } catch {
+    //   this.setState({
+    //     renderError: true,
+    //     errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error}`
+    // }
+    // }
+  }
   render() {
     console.log(this.state.weatherData);
+    console.log(this.state.moviesData)
 
     return (
       <>
@@ -94,11 +121,11 @@ class App extends React.Component {
         <main>
           <form onSubmit={this.handleSubmit}>
             <label>Explore a City!
-              <input 
-              name="city" 
-              type="text"
-              placeholder='🔎 Ex. Seattle' 
-              onInput={this.handleInput}/>
+              <input
+                name="city"
+                type="text"
+                placeholder='🔎 Ex. Seattle'
+                onInput={this.handleInput} />
             </label>
             <button type="submit">Explore!</button>
           </form>
@@ -107,7 +134,7 @@ class App extends React.Component {
           <h2>{this.state.errorMessage}</h2>
           {
             this.state.showMap &&
-            <Card>
+            <Card border style={{ width: '30%' }}>
               <Card.Body>
                 <Card.Title>City: {this.state.cityData.display_name}</Card.Title>
                 <Card.Text>Latitude : {this.state.cityData.lat}</Card.Text>
@@ -131,7 +158,12 @@ class App extends React.Component {
 
           />
 
-
+          <Movies
+            cityData={this.state.cityData}
+            moviesData={this.state.moviesData}
+            showMovies={this.state.showMovies}
+            getMovies={this.getMovies}
+          />
         </main>
 
         <h3>&copy; 2022 Joshua McCluskey</h3>
