@@ -44,7 +44,10 @@ Application is your own virtual guide to any city in the world.
 ## Credit and Collaborations
 
 - Credit: Kevin Lamarca on collaboration on WRRC Design
-- Credit: Regan Hayes on Collaboration on WRRC
+- Credit: Regan Hayes on Collaboration on WRRC Server Diagram
+- Credit: Chuck Altopiedi on Collaboration on WRRC API Diagram
+- Credit: Brian Thornburg on Collaboration on WRRC Require Diagram
+- Credit: Robb Alexander and Brian Thornburg on WRRC Cache Diagram
 
 ### Name of feature: 1 Setup Repo and API
 
