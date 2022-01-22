@@ -32,6 +32,7 @@ class App extends React.Component {
       searchCity: e.target.city.value,
     });
     this.getCity();
+    
     this.getMovies();
   }
 
@@ -66,7 +67,6 @@ class App extends React.Component {
         errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error}`
       })
     }
-    this.getWeather();
   }
   getWeather = async () => {
 
@@ -86,10 +86,10 @@ class App extends React.Component {
         errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error}`
       })
     }
-
+    
   }
   getMovies = async () => {
-    // try {
+    try {
     let url = `http://localhost:3002/movies?searchCity=${this.state.searchCity}`;
     console.log(url);
     let movieResults = await axios.get(url);
@@ -100,15 +100,13 @@ class App extends React.Component {
       showMovies: true,
       errorMessage: ''
     })
-
-
-    // } catch {
-    //   this.setState({
-    //     renderError: true,
-    //     errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error}`
-    // }
-    // }
+  } catch (error) {
+    this.setState({
+      renderError: true,
+      errorMessage: `Uh Oh Error: ${error.response.status}, ${error.response.data.error}`
+    })
   }
+}
   render() {
     console.log(this.state.weatherData);
     console.log(this.state.moviesData)
