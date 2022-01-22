@@ -17,7 +17,7 @@ Application is your own virtual guide to any city in the world.
 ![Server Diagram](./public/img/lab07.png)
 ![API Diagram](./public/img/lab08.png)
 ![Require Diagram](./public/img/lab09.png)
-![Cache Diagram](./public/img/lab10.png)git 
+![Cache Diagram](./public/img/lab10.png)git
 
 - HTML5
 - CSS3
@@ -152,3 +152,13 @@ Start time: 8:30 PM PST
 Finish time: 10:00 PM PST
 
 Actual time needed to complete: 2.5 hours
+
+### Lab10
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 2:00 AM PST
+
+Finish time: 3:00 AM PST
+
+Actual time needed to complete: 1 hours
