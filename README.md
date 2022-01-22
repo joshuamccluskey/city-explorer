@@ -41,6 +41,7 @@ Application is your own virtual guide to any city in the world.
 - 01.19.2021 05:24 PM PST - Debugged and Finish Card 2 and 3
 - 01.20.2021 05:30 PM PST - Updates for lab 07
 - 01.21.2021 02:30 PM PST - Lab08 Complete Deployment on Heroku
+- 01.21.2021 02:30 PM PST - Lab09 Code Base Refactored
 
 ## Credit and Collaborations
 
@@ -134,10 +135,20 @@ Actual time needed to complete: 3 hours
 
 ### Lab08 Complete
 
-Estimate of time needed to complete: 1 hour
+Estimate of time needed to complete: 3 hour
 
 Start time: 9:30 PM PST
 
 Finish time: 12:30 PM PST
 
 Actual time needed to complete: 3 hours
+
+### Lab09
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 8:30 PM PST
+
+Finish time: 10:00 PM PST
+
+Actual time needed to complete: 2.5 hours
