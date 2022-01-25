@@ -32,7 +32,7 @@ class App extends React.Component {
       searchCity: e.target.city.value,
     });
     this.getCity();
-    
+    this.getWeather();
     this.getMovies();
   }
 
@@ -72,11 +72,11 @@ class App extends React.Component {
 
     try {
       let url = `http://localhost:3002/weather?lat=${this.state.lat}&lon=${this.state.lon}`
-      let weatherResults = await axios.get(url);
-      console.log(weatherResults.data);
+      let weatherData = await axios.get(url);
+      console.log(weatherData.data);
 
       this.setState({
-        weatherData: weatherResults.data,
+        weatherData: weatherData.data,
         showWeather: true,
         errorMessage: ''
       })

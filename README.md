@@ -17,7 +17,7 @@ Application is your own virtual guide to any city in the world.
 ![Server Diagram](./public/img/lab07.png)
 ![API Diagram](./public/img/lab08.png)
 ![Require Diagram](./public/img/lab09.png)
-![Cache Diagram](./public/img/lab10.png)
+![Cache Diagram](./public/img/lab10.png)git
 
 - HTML5
 - CSS3
@@ -30,8 +30,6 @@ Application is your own virtual guide to any city in the world.
 
 ### [Trello](https://trello.com/b/V7StKRPp/city-explorer)
 
-### [PR Lab06](https://github.com/joshuamccluskey/city-explorer/pull/1/commits)
-
 ## Change Log
 
 - 01.17.2021 6:00 PM PST - Repo created deployment bug fixed in package.json file
@@ -42,6 +40,8 @@ Application is your own virtual guide to any city in the world.
 - 01.20.2021 05:30 PM PST - Updates for lab 07
 - 01.21.2021 02:30 PM PST - Lab08 Complete Deployment on Heroku
 - 01.21.2021 02:30 PM PST - Lab09 Code Base Refactored
+- 01.25.2021 04:30 AM PST - Troubleshooted Server back up
+- 01.25.2021 02:00 PM PST - Lab 10,9,8,7 updates and Complete
 
 ## Credit and Collaborations
 
@@ -152,3 +152,23 @@ Start time: 8:30 PM PST
 Finish time: 10:00 PM PST
 
 Actual time needed to complete: 2.5 hours
+
+### Lab10
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 2:00 AM PST
+
+Finish time: 3:00 AM PST
+
+Actual time needed to complete: 1 hours
+
+### Lab10 Part Deux
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 2:30 AM PST
+
+Finish time: 4:30 AM PST
+
+Actual time needed to complete: 2 hours
