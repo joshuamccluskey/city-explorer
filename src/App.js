@@ -32,7 +32,7 @@ class App extends React.Component {
       searchCity: e.target.city.value,
     });
     this.getCity();
-    
+    this.getWeather();
     this.getMovies();
   }
 
